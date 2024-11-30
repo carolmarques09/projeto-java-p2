@@ -1,4 +1,6 @@
-public class Personagem {
+import java.util.ArrayList;
+
+public class Personagem extends Unidade {
     private String nome;
     private String raca;
     private String genero;
@@ -13,34 +15,28 @@ public class Personagem {
     private int experiencia;
     private int x;
     private int y;
+    private ArrayList<String> inventario;
 
-    public Personagem(String nome, String raca, String genero, int idade, String classe, int saude, int ataque, int defesa, int velocidade, int nivel, int recursos, int experiencia, int x, int y) {
-        this.nome = nome;
-        this.raca = raca;
-        this.genero = genero;
-        this.idade = idade;
-        this.classe = classe;
-        this.saude = saude;
-        this.ataque = ataque;
-        this.defesa = defesa;
-        this.velocidade = velocidade;
-        this.nivel = 1;
-        this.recursos = recursos;
-        this.experiencia = 0;
-        this.x = 0;
-        this.y = 0;
+    public Personagem(String nome, UnidadeTipo tipo, int saude) {
+        super(nome, tipo, saude);
+        this.inventario = new ArrayList<>();
     }
 
-    public void mover(int novoX, int novoY) {
-        this.x = novoX;
-        this.y = novoY;
-        System.out.println(nome + " se moveu para (" + x + ", " + y + ").");
+    public void adicionarItem(String item) {
+        inventario.add(item);
+        System.out.println(item + " adicionado ao inventário. ");
     }
 
-    public void atacar(Personagem alvo) {
-        int dano = Math.max(this.ataque - alvo.defesa, 0);
-        alvo.tomarDano(dano);
-        System.out.println(nome + " atacou " + alvo.nome + " e causou " + dano + " de dano.");
+    public void removerItem(String item) {
+        if (inventario.remove(item)) {
+            System.out.println(item + " removido do inventário. ");
+        } else {
+            System.out.println(item + "não encontrado no inventário. ");
+        }
+    }
+
+    public void exibirInventario() {
+        System.out.println("Inventário de " + nome + " :" + inventario);
     }
 
     public void tomarDano(int dano) {
@@ -52,19 +48,4 @@ public class Personagem {
             System.out.println(nome + "agora tem" + this.saude + "de saúde!");
         }
     }
-
-    public void curar(int quantidade) {
-        this.saude += quantidade;
-        System.out.println(nome + "se curou e agora tem" + this.saude + " de saúde!");
-    }
-
-    public void ganharExperiencia(int exp) {
-        this.experiencia += exp;
-        if (this.experiencia >= 100) {
-            this.nivel++;
-            this.experiencia -= 100;
-            System.out.println(nome + "subiu para o nível " + this.nivel + "!");
-        }
-    }
-
 }

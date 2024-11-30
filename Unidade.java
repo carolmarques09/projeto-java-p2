@@ -14,17 +14,11 @@ public class Unidade implements GameEntity {
         this.y = 0;
     }
 
-    public void mover(int x, int y) {
-        this.x = x;
-        this.y = y;
-        System.out.println(nome + "se moveu para (" + x + ", " + y + ")");
-    }
-
-    public void atacar(Unidade trabalhador) {
-        this.saude -= dano;
-    }
-
     public void performarAcao() {
 
+    }
+
+    public UnidadeTipo getTipo() {
+        return this.tipo;
     }
 }

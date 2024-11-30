@@ -10,8 +10,4 @@ public abstract class AbstractUnidade {
         this.x = 0;
         this.y = 0;
     }
-
-    public int getHealth() {
-        return saude;
-    }
 }
