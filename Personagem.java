@@ -2,19 +2,8 @@ import java.util.ArrayList;
 
 public class Personagem extends Unidade {
     private String nome;
-    private String raca;
-    private String genero;
-    private int idade;
     private String classe; // função
-    private int ataque;
-    private int defesa;
     private int saude;
-    private int velocidade;
-    private int nivel;
-    private int recursos;
-    private int experiencia;
-    private int x;
-    private int y;
     private ArrayList<String> inventario;
 
     public Personagem(String nome, UnidadeTipo tipo, int saude) {
