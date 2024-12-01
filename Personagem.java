@@ -37,4 +37,10 @@ public class Personagem extends Unidade {
             System.out.println(nome + "agora tem" + this.saude + "de saúde!");
         }
     }
+
+    // Override implementado para não dar erro na classe Personagem
+    @Override
+    public void pegar(String objeto) {
+
+    }
 }
