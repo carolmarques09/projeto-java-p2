@@ -17,7 +17,7 @@ public class Main {
         jogador1.adicionarItem("Machado");
         jogador1.exibirInventario();
 
-        jogador1.removerItem("Machado");
+        jogador1.removerItem("machado");
         jogador1.exibirInventario();
 
         trabalhador.mover(10, 20);
@@ -25,6 +25,7 @@ public class Main {
         trabalhador.pegarRecursos("machado");
 
         arqueiro.mover(15, 30);
+        arqueiro.pegar("flecha");
         arqueiro.atacar(trabalhador);
 
         trabalhador.performarAcao();

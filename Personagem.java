@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Personagem extends Unidade {
+public abstract class Personagem extends Unidade {
     private String nome;
     private String classe; // função
     private int saude;

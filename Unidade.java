@@ -40,11 +40,6 @@ public abstract class Unidade implements recursos {
     }
 
     @Override
-    public void pegar(String objeto) {
-
-    }
-
-    @Override
     public void usar(String objeto) {
 
     }
