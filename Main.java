@@ -1,12 +1,13 @@
+import javax.swing.undo.UndoableEdit;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Unidade trabalhador = new Unidade("Trabalhador 1", UnidadeTipo.TRABALHADOR, 100);
-        Unidade arqueiro = new Unidade("Arqueiro 1", UnidadeTipo.ARQUEIRO, 75);
-        Unidade cavaleiro = new Unidade("Cavaleiro 1", UnidadeTipo.CAVALARIA, 85);
-        Personagem jogador1 = new Personagem("Trabalhador 2", UnidadeTipo.TRABALHADOR, 100);
+        Personagem trabalhador = new Personagem("Skitarii Vanguard", UnidadeTipo.TRABALHADOR, 100);
+        Personagem arqueiro = new Personagem("Astartes Scout", UnidadeTipo.ARQUEIRO, 100);
+        Personagem cavaleiro = new Personagem("Space Marine", UnidadeTipo.CAVALARIA, 100);
+        Personagem jogador1 = new Personagem("DarkWolfX_10", UnidadeTipo.TRABALHADOR, 100);
 
         System.out.println("It is the 41st millenium. For more than a hundred centuries, the Emperor of mankind has sat immobile on the Golden Throne of Earth. He is the master of mankind by the will of the gods and master of a million worlds by the might of his inexhaustible armies.");
 
@@ -22,17 +23,18 @@ public class Main {
 
         trabalhador.mover(10, 20);
         trabalhador.pegarRecursos("madeira");
+        trabalhador.pegarRecursos("machado");
 
         arqueiro.mover(15, 30);
         arqueiro.atacar(trabalhador);
 
-        ((Combate)arqueiro).attack(trabalhador);
-
         trabalhador.performarAcao();
-        trabalhador.curar();
+        trabalhador.soltar("madeira");
 
         cavaleiro.mover(12, 30);
         cavaleiro.pegarRecursos("espada");
-        cavaleiro.ganharExperiencia();
+        cavaleiro.usar("espada");
+        cavaleiro.atacar(arqueiro);
+        cavaleiro.descartar("espada");
     }
 }

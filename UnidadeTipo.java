@@ -3,5 +3,7 @@ public enum UnidadeTipo {
     CAVALARIA,
     ARQUEIRO,
     CERCO,
-    TRABALHADOR
+    TRABALHADOR,
+    CRIATURAAQUATICA,
+    CRIATURAVOADORA
 }

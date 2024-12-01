@@ -1,4 +1,6 @@
-public class Unidade implements GameEntity {
+import Objetos.recursos;
+
+public abstract class Unidade implements recursos {
     private String nome;
     private UnidadeTipo tipo;
     private int saude;
@@ -20,5 +22,40 @@ public class Unidade implements GameEntity {
 
     public UnidadeTipo getTipo() {
         return this.tipo;
+    }
+
+    @Override
+    public void mover(int x, int y) {
+
+    }
+
+    @Override
+    public void atacar(recursos target) {
+
+    }
+
+    @Override
+    public void pegarRecursos(String resourceType) {
+
+    }
+
+    @Override
+    public void pegar(String objeto) {
+
+    }
+
+    @Override
+    public void usar(String objeto) {
+
+    }
+
+    @Override
+    public void soltar(String objeto) {
+
+    }
+
+    @Override
+    public void descartar(String objeto) {
+
     }
 }
